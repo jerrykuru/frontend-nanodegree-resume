@@ -1,3 +1,5 @@
+'use strict';
+
 var bio = {
      "name": "Jerry  Kuru",
      "role": "Web Developer",
@@ -25,6 +27,8 @@ var bio = {
      }
  };
 
+
+
  var education = {
      "schools": [{
          "name": "Franklin University",
@@ -49,7 +53,7 @@ var bio = {
      }],
      "display": function() {
 
-         for (eduIndx in education.schools) {
+         for (var eduIndx in education.schools) {
              $("#education").append(HTMLschoolStart);
 
              var formattedHTMLschoolName = HTMLschoolName.replace("%data%", education.schools[eduIndx].name);
@@ -62,7 +66,7 @@ var bio = {
 
              if (education.schools[eduIndx].majors.length > 0) {
                  var majors = education.schools[eduIndx].majors;
-                 for (majorIdx in majors) {
+                 for (var majorIdx in majors) {
                      var formattedHTMLschoolMajor = HTMLschoolMajor.replace("%data%", majors[majorIdx]);
                      $(".education-entry:last").append(formattedHTMLschoolMajor);
                  }
@@ -71,7 +75,7 @@ var bio = {
 
          $(".education-entry:last").append(HTMLonlineClasses);
          var onlineCourse = education.onlineCourse;
-         for (courseIdx in onlineCourse) {
+         for (var courseIdx in onlineCourse) {
              var formattedHTMLonlineTitle = HTMLonlineTitle.replace("%data%", onlineCourse[courseIdx].title);
              var formattedHTMLonlineSchool = HTMLonlineSchool.replace("%data%", onlineCourse[courseIdx].school);
              $(".education-entry:last").append(formattedHTMLonlineTitle + formattedHTMLonlineSchool);
@@ -114,7 +118,7 @@ var bio = {
      }],
      "display": function() {
 
-         for (workIdx in work.jobs) {
+         for (var workIdx in work.jobs) {
              var workExperienceObj = work.jobs[workIdx];
              $("#workExperience").append(HTMLworkStart);
 
@@ -143,7 +147,7 @@ var bio = {
      }],
      "display": function() {
          var listOfProjects = projects.projects;
-         for (project in listOfProjects) {
+         for (var project in listOfProjects) {
              $("#projects").append(HTMLprojectStart);
 
              var formattedHTMLprojectTitle = HTMLprojectTitle.replace("%data%", listOfProjects[project].title);
@@ -154,7 +158,7 @@ var bio = {
              $(".project-entry:last").append(formattedHTMLprojectDescription);
 
              if (listOfProjects[project].images.length > 0) {
-                 for (image in listOfProjects[project].images) {
+                 for (var image in listOfProjects[project].images) {
                      var formattedHTMLprojectImage = HTMLprojectImage.replace("%data%", listOfProjects[project].images[image]);
                      $(".project-entry:last").append(formattedHTMLprojectImage);
                  }
@@ -168,7 +172,7 @@ var bio = {
  $("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
  $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
  $("#header").append(HTMLskillsStart);
- for (skill in bio.skills) {
+ for (var skill in bio.skills) {
      $("#skills-h3").append(HTMLskills.replace("%data%", bio.skills[skill]));
  }
 
