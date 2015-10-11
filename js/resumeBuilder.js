@@ -165,7 +165,13 @@
   };
 
 
-
+ $("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
+ $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+ $("#header").append(HTMLskillsStart);
+ for(skill in bio.skills){
+  $("#skills-h3").append(HTMLskills.replace("%data%", bio.skills[skill]));
+ }
+ 
 
   $("#main").append(internationalizeButton);
 
