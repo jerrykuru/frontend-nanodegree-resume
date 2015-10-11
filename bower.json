@@ -1,0 +1,22 @@
+{
+  "name": "forntend-nanodegree-resume",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jerrykuru/frontend-nanodegree-resume",
+  "authors": [
+    "Jerry Kuru <jerrykuru@gmail.com>"
+  ],
+  "description": "dependencies for frontend nanodegree resume project",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
