@@ -27,6 +27,12 @@ bio.display = function() {
          var formattedHTMLmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
          var formattedContacts = formattedHTMLmobile + formattedHTMLemail + formattedHTMLgithub + formattedHTMLtwitter + formattedHTMLlocation;
          $("#topContacts").prepend(formattedContacts);
+
+     $("#footerContacts").prepend(HTMLlocation.replace("%data%", bio.contacts.location));
+     $("#footerContacts").prepend(HTMLtwitter.replace("%data%", bio.contacts.twitter));
+     $("#footerContacts").prepend(HTMLgithub.replace("%data%", bio.contacts.github));
+     $("#footerContacts").prepend(HTMLemail.replace("%data%", bio.contacts.email));
+     $("#footerContacts").prepend(HTMLmobile.replace("%data%", bio.contacts.mobile));
 };
 
 
@@ -190,20 +196,12 @@ projects.display = function() {
 
 
 
- function displayFooterContacts() {
-
-     $("#footerContacts").prepend(HTMLlocation.replace("%data%", bio.contacts.location));
-     $("#footerContacts").prepend(HTMLtwitter.replace("%data%", bio.contacts.twitter));
-     $("#footerContacts").prepend(HTMLgithub.replace("%data%", bio.contacts.github));
-     $("#footerContacts").prepend(HTMLemail.replace("%data%", bio.contacts.email));
-     $("#footerContacts").prepend(HTMLmobile.replace("%data%", bio.contacts.mobile));
- };
+ 
 
 
-
- bio.display.call();
- education.display.call();
- work.display.call();
- projects.display.call();
+ bio.display();
+ education.display();
+ work.display();
+ projects.display();
  $("#mapDiv").append(googleMap);
- displayFooterContacts();
+ 
