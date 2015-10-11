@@ -63,19 +63,19 @@ bio.display = function() {
 education.display = function () {
    
 
-         for (var eduIndx in education.schools) {
+         for (var eduIdx in education.schools) {
              $("#education").append(HTMLschoolStart);
 
-             var formattedHTMLschoolName = HTMLschoolName.replace("%data%", education.schools[eduIndx].name);
-             var formattedHTMLschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[eduIndx].degree);
+             var formattedHTMLschoolName = HTMLschoolName.replace("%data%", education.schools[eduIdx].name);
+             var formattedHTMLschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[eduIdx].degree);
              $(".education-entry:last").append(formattedHTMLschoolName + formattedHTMLschoolDegree);
-             var formattedHTMLschoolDates = HTMLschoolDates.replace("%data%", education.schools[eduIndx].dates);
+             var formattedHTMLschoolDates = HTMLschoolDates.replace("%data%", education.schools[eduIdx].dates);
              $(".education-entry:last").append(formattedHTMLschoolDates);
-             var formattedHTMLschoolLocation = HTMLschoolLocation.replace("%data%", education.schools[eduIndx].location);
+             var formattedHTMLschoolLocation = HTMLschoolLocation.replace("%data%", education.schools[eduIdx].location);
              $(".education-entry:last").append(formattedHTMLschoolLocation);
 
-             if (education.schools[eduIndx].majors.length > 0) {
-                 var majors = education.schools[eduIndx].majors;
+             if (education.schools[eduIdx].majors.length > 0) {
+                 var majors = education.schools[eduIdx].majors;
                  for (var majorIdx in majors) {
                      var formattedHTMLschoolMajor = HTMLschoolMajor.replace("%data%", majors[majorIdx]);
                      $(".education-entry:last").append(formattedHTMLschoolMajor);
@@ -193,10 +193,6 @@ projects.display = function() {
      var nameAsArray = name.split(" ");
      return nameAsArray[0].slice(0, 1).toLocaleUpperCase() + nameAsArray[0].slice(1, nameAsArray[0].length) + " " + nameAsArray[1].toLocaleUpperCase();
  };
-
-
-
- 
 
 
  bio.display();
