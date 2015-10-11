@@ -187,12 +187,7 @@ projects.display = function() {
 
  $("#main").append(internationalizeButton);
 
- function inName(name) {
-     var intName;
-     var nameAsArray = name.split(" ");
-     return nameAsArray[0].slice(0, 1).toLocaleUpperCase() + nameAsArray[0].slice(1, nameAsArray[0].length) + " " + nameAsArray[1].toLocaleUpperCase();
- };
-
+ 
 
  bio.display();
  education.display();
