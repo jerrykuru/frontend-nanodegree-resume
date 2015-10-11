@@ -12,9 +12,12 @@ var bio = {
      },
      "welcomeMessage": "lorem ipsum dolor sit amet etc etc etc",
      "skills": ["awesome", "delivering things", "cryogenic sleep", "saving the universe"],
-     "bioPic": "images/fry.jpg",
-     "display": function() {
-         $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+     "bioPic": "images/fry.jpg"
+ };
+
+bio.display = function() {
+
+    $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
          $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 
          var formattedHTMLlocation = HTMLlocation.replace("%data%", bio.contacts.location);
@@ -24,9 +27,7 @@ var bio = {
          var formattedHTMLmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
          var formattedContacts = formattedHTMLmobile + formattedHTMLemail + formattedHTMLgithub + formattedHTMLtwitter + formattedHTMLlocation;
          $("#topContacts").prepend(formattedContacts);
-     }
- };
-
+};
 
 
  var education = {
@@ -50,8 +51,11 @@ var bio = {
          "school": "Udacity",
          "date": 2014,
          "url": "http://www.udacity.com/course/ud804"
-     }],
-     "display": function() {
+     }]
+ };
+
+education.display = function () {
+   
 
          for (var eduIndx in education.schools) {
              $("#education").append(HTMLschoolStart);
@@ -85,9 +89,7 @@ var bio = {
              $(".education-entry:last").append(formattedHTMLonlineURL);
 
          }
-     }
- };
-
+     };
 
 
  var work = {
@@ -115,10 +117,12 @@ var bio = {
          "location": "Columbus, OH",
          "dates": "Jun 2009 - Jun 2012",
          "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-     }],
-     "display": function() {
+     }]
+     
+ };
 
-         for (var workIdx in work.jobs) {
+work.display = function() {
+       for (var workIdx in work.jobs) {
              var workExperienceObj = work.jobs[workIdx];
              $("#workExperience").append(HTMLworkStart);
 
@@ -131,9 +135,8 @@ var bio = {
 
              $(".work-entry:last").append(formatterEmployerTitle);
          }
+};
 
-     }
- };
 
  var projects = {
      "projects": [{
@@ -144,8 +147,10 @@ var bio = {
 
              "http://placehold.it/197x148", "http://placehold.it/197x148"
          ]
-     }],
-     "display": function() {
+     }]
+ };
+
+projects.display = function() {
          var listOfProjects = projects.projects;
          for (var project in listOfProjects) {
              $("#projects").append(HTMLprojectStart);
@@ -165,9 +170,7 @@ var bio = {
              }
          }
 
-     }
- };
-
+     };
 
  $("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
  $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
