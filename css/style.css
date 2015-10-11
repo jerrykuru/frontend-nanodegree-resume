@@ -98,6 +98,11 @@ a {
   color: #f3f3f3;
   line-height: 28px;
 }
+.online-classes {
+  text-align: left;
+  padding-left: 0px;
+
+}
 
 #skills-h3 {
   color: #f5ae23;
